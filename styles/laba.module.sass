@@ -1,0 +1,26 @@
+.main
+	background-color: white
+	display: flex
+	flex-direction: column
+	width: 400px
+	padding: 20px
+	border-radius: 15px
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+
+	&>*:not(:first-child)
+		margin-top: 20px
+
+.textArea
+	width: 100%
+	font-family: inherit
+	font-size: 1rem
+	border-radius: 10px
+	resize: none 
+
+.buttons
+	display: flex
+	justify-content: space-between
+
+	button svg
+		vertical-align: middle
+		transform: translateY(-1px)
