@@ -3,6 +3,9 @@ import Link from 'next/link'
 import cn from 'classnames'
 import styles from './inputs.module.sass'
 
+import pickerSs from './date-picker.module.sass'
+import { MdKeyboardArrowUp } from 'react-icons/md'
+
 export const LibInput = (props) => {
 
 	const [ value, setValue ] = useState(props.value || '');
@@ -118,4 +121,40 @@ export const RippleButton = (props) => {
 				))}
 			</button>
 		)
+}
+
+export const Picker = (props) => {
+
+	const [ item, setItem ] = useState(props.defaultValue || 0);
+	const itemRef = useRef();
+	itemRef.current = item;
+
+	const incrementItem = () => {
+		let _item = itemRef.current+1;
+		if(_item >= props.data.length)
+			_item = props.data.length -1 ;
+
+		setItem(_item);
+
+		if(props.onChange)
+			props.onChange({[props.name]: props.data[_item]});
+	}
+
+	const decrementItem = () => {
+		let _item = itemRef.current-1;
+		if(_item < 0)
+			_item = 0;
+
+		setItem(_item);
+		if(props.onChange)
+			props.onChange({[props.name]: props.data[_item]});
+	}
+
+	return (
+		<div className={pickerSs.picker} style={{width: props.width}}>
+			<button className={pickerSs.button} onClick={incrementItem}><MdKeyboardArrowUp/></button>
+			<div className={pickerSs.content}>{props.data[item]}</div>
+			<button className={cn(pickerSs.button, pickerSs.down)} onClick={decrementItem}><MdKeyboardArrowUp/></button>
+		</div>
+	);
 }

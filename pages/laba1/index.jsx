@@ -34,7 +34,7 @@ const Laba1Page = (props) => {
 
 	return (
 		<Layout title="Одноразовый шифр" sub="Лабораторная работа 1">
-			<main className={style.main}>
+			<main className={style.main} style={{width: "400px"}}>
 				<textarea className={style.textArea} rows="6" placeholder="Одноразовый ключ" 
 					onChange={(e) => onChange({key: e.target.value})}>
 				</textarea>

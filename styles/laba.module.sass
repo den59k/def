@@ -2,7 +2,7 @@
 	background-color: white
 	display: flex
 	flex-direction: column
-	width: 400px
+	width: 800px
 	padding: 20px
 	border-radius: 15px
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
@@ -24,3 +24,33 @@
 	button svg
 		vertical-align: middle
 		transform: translateY(-1px)
+
+.pair
+	display: flex
+	align-items: center
+
+.field
+	background-color: #EEEEEE
+	border-radius: 10px
+	flex-grow: 1
+	border: 1px solid #D7D7D7
+
+	.name
+		color: #8F8F8F
+		border-bottom: 1px solid #DFDFDF
+		padding: 10px
+
+	.value
+		padding: 10px
+		font-size: 0.8rem
+		overflow-wrap: break-word
+
+.column
+	max-width: 50%
+
+	&:first-child
+		padding-right: 20px
+		box-sizing: border-box
+
+	button
+		margin: 10px 0
