@@ -21,6 +21,7 @@ export const LibInput = (props) => {
 
 	const onInput = (e) => {
 		const _value = e.currentTarget.value;
+
 		setValue(_value);
 		if(props.onChange && props.name)
 			props.onChange({[props.name]: _value});
@@ -34,7 +35,7 @@ export const LibInput = (props) => {
 			[styles.errored]: !!props.error
 		})}>
 			<label>{props.label}</label>
-			<input {..._props} value={value} onChange={onInput} onInput={onInput}/>
+			<input {..._props} value={value} onChange={onInput}/>
 			{props.icon}
 		</div>
 	);
